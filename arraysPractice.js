@@ -77,9 +77,20 @@ var odds = [];
 //Have divider return an Array with the first item in the array being the evens array (all the even values from nums) and 
 //the second item in the Array being the odds array(all the odd values from nums).
 
+var divider = function(nums, evens, odds) {
+  var newArray = [];
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] % 2 === 0) {
+      evens.push(nums[i]);
+    } else {
+      odds.push(nums[i]);
+    }
+  }
+  newArray.push(evens);
+  newArray.push(odds);
 
-
-
+  return newArray;
+}
 
 
 //Next Problem
@@ -93,7 +104,16 @@ var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //to write a function named finder that will get a random number, then loop through the array to see if that random number 
 //is in the array. If it is, return true, if it's not, return false
 
-  //Code Here
+var finder = function(arr) {
+  var ranNum = getRandomArbitrary();
+  var index = arr.indexOf(ranNum);
+
+  if (index > -1) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 
 //Next problem
@@ -104,7 +124,9 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes is given str as it's only argument and returns that string after it's been 
 //reversed
 
-  //Code Here
+var reverse = function(sentence) {
+  return sentence.split('').reverse().join('');
+}
 
 
 //Next Problem
@@ -124,7 +146,23 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   myGroceryList then return the new, updated grocery list.
 */
 
-  //Code Here
+var removeItem = function(list, item) {
+  var index = list.indexOf(item);
+
+  if (index > -1) {
+    delete list[index];
+  }
+
+  return list;
+}
+
+var addItem = function(list, item) {
+  var index = list.indexOf(item);
+
+  if (index < 0) {
+    list.push(item);
+  }
+}
 
 //removeItem('chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
@@ -137,7 +175,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
-  //Code Here
+var maker = function() {
+  var arr = [];
+  for (var i = 1; i < 216; i++) {
+    arr.push(i);
+  }
+  return arr;
+};
 
 
 
@@ -148,7 +192,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //Write a function called addTen that is given 'numbers' as it's only argument and returns a new
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
-  //Code Here
+var addTen = function(numArray) {
+  for (var i = 0; i < numArray.length; i++) {
+    numArray[i] = Number(numArray[i]);
+    numArray[i] += 10;
+  }
+
+  return numArray;
+}
 
 
 
