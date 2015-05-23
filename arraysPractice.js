@@ -86,8 +86,14 @@ var divider = function(nums, evens, odds) {
       odds.push(nums[i]);
     }
   }
-  newArray.push(evens);
-  newArray.push(odds);
+
+  evens.forEach(function(index) {
+    newArray.push(index);
+  });
+
+  odds.forEach(function(index) {
+    newArray.push(index);
+  });
 
   return newArray;
 }
@@ -226,7 +232,7 @@ var longest = function(array1, array2) {
   } else {
     return array2;
   }
-}
+};
 
 
 /*As a continuation of the previous problem, write another function called 'both'.
@@ -235,5 +241,14 @@ var longest = function(array1, array2) {
 */
 
 var both = function(arr1, arr2) {
-  
-}
+  var comboArray = [];
+
+  arr1.forEach(function(index) {
+    comboArray.push(index);
+  });
+
+  arr2.forEach(function(item) {
+    comboArray.push(item);
+  });
+
+};
