@@ -252,3 +252,126 @@ var both = function(arr1, arr2) {
   });
 
 };
+
+var devMountainEmployees = [];
+
+var tyler = {
+    name: 'Tyler',
+    position: 'Lead Instructor/Engineer',
+    spiritAnimal: 'Honey Badger'
+};
+
+var cahlan = {
+    name: 'Cahlan',
+    position: 'CEO',
+    spiritAnimal: 'butterfly'
+};
+
+var ryan = {
+    name: 'Ryan',
+    position: 'Marketing',
+    spiritAnimal: 'fox'
+};
+
+var colt = {
+    name: 'Colt',
+    position: 'Everything really',
+    spiritAnimal: 'Young Male Horse'
+}
+
+/*Above you're given an empty array with four objects. Fill the devMountainEmployees
+array with those four objects. After that console.log the length of the Array and make
+sure that it's equal to 4. */
+
+  //Code Here
+
+/*Now let's say Cahlan has a mental breakdown and has to take a leave of absense to 'find himself'.
+Loop through your devMountainEmployees until you find cahlan, then remove him from the array.*/
+
+  //Code Here
+
+
+
+
+//NEXT PROBLEM
+
+
+
+
+/*Now we're going to combine what we've learned today (objects) with what we learned
+yesterday (arrays). Yeah, take a deep breathe. You're ready for this, promise.
+Let's think back to our itunes example (tylermcginnis.com/itunes).
+Notice that when you type in an artist name, iTunes gives us back a LOT of data.
+What they're really giving us is an Array full of Objects. It probably looks something
+like this. */
+
+var data = [
+    {
+        artist: 'shakira',
+        album: 'hips don\'t lie',
+        tracks: 16,
+    },
+    {
+        artist: 'shakira',
+        album: 'mariposa',
+        tracks: 12,
+    },
+    {
+        artist: 'shakira',
+        album: 'greatest hits',
+        tracks: 19
+    }
+];
+
+
+
+/*A very clean way to pass around large LISTS (arrays) of COLLECTIONS (objects)
+of Data is to have an Array full of objects. */
+
+//Create an empty array called users.
+
+var users = [];
+
+/*Now add three user objects to your users array. Each user object should contain the
+following properties. name, email, password, username.*/
+
+//include this as one of the objects in your array.
+var user1 = {
+    name: 'Tyler McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+}
+
+var createUser = function(name, email, password, username) {
+  return {
+    name: name,
+    email: email,
+    password: password,
+    username: username
+  }
+};
+
+var user2 = createUser('joe kobrosky', 'awesomeness@gmail.com', '@w3s0m3', 'awesomeness');
+var user3 = createUser('caroline kobrosky', 'ckobrosky@gmail.com', 'j03Suck5', 'irock');
+
+users.push(user1, user2, user3);
+
+/*Now you have a very common data structure. Twitter is a good use case.
+It's easy to imagine that your followers list on Twitter is an Array full or objects
+and those objects contain properties about the specific person you follow.*/
+
+/*Now let's say that Tyler decided to delete his account. Loop through your array of
+objects until you find Tyler's account (use tylermcginnis33@gmail.com to find him).
+Once you find the particular indice he's located in, delete him from the array.*/
+
+var deleteAccount = function(users, searchCritiria) {
+  for (var i = 0; i <users.length; i++) {
+    if (users[i].email === searchCritiria) {
+      users.splice(i, 1);
+    }
+  }
+}
+
+//The activity we just did is very much how data works in 'the real world'.
+
